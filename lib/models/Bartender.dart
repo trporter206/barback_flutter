@@ -1,11 +1,9 @@
-
-
 import 'dart:collection';
-import 'package:barback/models/Ingredient.dart';
+import 'package:barback/models/ingredient.dart';
 
-import 'Cocktail.dart';
-import 'Order.dart';
-import 'Table.dart';
+import 'cocktail.dart';
+import 'order.dart';
+import 'table.dart';
 
 class Bartender {
   final String id;
@@ -15,12 +13,11 @@ class Bartender {
   final List<BarTable> tables;
   final List<Ingredient> inventory;
 
-  Bartender({
-    required this.id,
-    required this.inventory,
-    required this.menu,
-    required this.queue,
-    required this.queueIsOpen,
-     required this.tables
-  });
+  Bartender(
+      {required this.id,
+      required this.inventory,
+      required this.menu,
+      required this.queue,
+      required this.queueIsOpen,
+      required this.tables});
 }

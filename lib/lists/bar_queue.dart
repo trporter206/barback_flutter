@@ -2,10 +2,12 @@ import 'dart:collection';
 
 import 'package:barback/list_items/queue_list_item.dart';
 import 'package:barback/main.dart';
+import 'package:barback/models/guest.dart';
+import 'package:barback/models/table.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'models/Order.dart';
+import '../models/order.dart';
 
 class BarQueue extends StatefulWidget {
   const BarQueue({Key? key}) : super(key: key);
@@ -21,6 +23,10 @@ class BarQueueState extends State<BarQueue> {
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
     orders = appState.currentBartender.queue;
+    var g0 = Guest(id: "01");
+    var t0 = BarTable(tableNumber: 1, guests: [], orders: []);
+    var o0 = Order(id: "o0", cocktails: [], guest: g0, barTable: t0);
+    orders.add(o0);
 
     return Scaffold(
       body: Column(
@@ -32,7 +38,10 @@ class BarQueueState extends State<BarQueue> {
           Expanded(
             child: ListView(
               children: orders.map((Order order) {
-                return QueueListItem(order: order);
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: QueueListItem(order: order),
+                );
               }).toList(),
             ),
           )

@@ -1,8 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 
-import '../models/Order.dart';
+import '../models/order.dart';
 
 class QueueListItem extends StatelessWidget {
   final Order order;
@@ -23,8 +21,8 @@ class QueueListItem extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Order ${order.id}'),
-                    Text('${order.cocktails} Cocktails'),
+                    Text('ID: ${order.id}'),
+                    Text('${order.cocktails.length} Cocktails'),
                   ],
                 ),
               ),

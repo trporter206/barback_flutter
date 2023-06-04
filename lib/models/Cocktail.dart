@@ -1,7 +1,5 @@
-
-
-import 'Bartender.dart';
-import 'Ingredient.dart';
+import 'bartender.dart';
+import 'ingredient.dart';
 
 class Cocktail {
   final String name;
